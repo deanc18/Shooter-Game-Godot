@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://dqgi127qf2ryd"]
+[gd_scene load_steps=30 format=3 uid="uid://dqgi127qf2ryd"]
 
 [ext_resource type="PackedScene" uid="uid://bdyqrknt5cbhx" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/floor_stone.glb" id="1_gkua5"]
-[ext_resource type="PackedScene" uid="uid://cs6qfbgklm7j1" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/wall.glb" id="2_q7ur8"]
+[ext_resource type="PackedScene" uid="uid://ks5s1irii7t8" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/wall.glb" id="2_q7ur8"]
 [ext_resource type="PackedScene" uid="uid://n17u77rj7ffd" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/wall_corner.glb" id="3_ia0rw"]
 [ext_resource type="PackedScene" uid="uid://cp4mkuq0j5onr" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/pillar.glb" id="4_y258w"]
 [ext_resource type="PackedScene" uid="uid://bq7b6dcdu6fdu" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/wall_archedwindow_gated.glb" id="5_l7ix8"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dcqwlfuswavnd" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/props/torch_mounted.glb" id="15_mt6qq"]
 [ext_resource type="PackedScene" uid="uid://b2b718wyg4qgl" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/skeleton/skeleton_mage.glb" id="16_3484b"]
 [ext_resource type="PackedScene" uid="uid://brruqunauuqm0" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/floor_wood.glb" id="17_jicuo"]
+[ext_resource type="Script" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/skeleton/skeleton_mage.gd" id="17_s6w4g"]
 [ext_resource type="PackedScene" uid="uid://bbvio8vux6trq" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/ceiling.glb" id="18_oibvk"]
 [ext_resource type="PackedScene" uid="uid://dvgj8xgq5jhn" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/wall_doorway.glb" id="19_qok4y"]
 [ext_resource type="PackedScene" uid="uid://car4q7qh72vwx" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/wall_cracked.glb" id="20_mw21a"]
@@ -25,67 +26,32 @@
 [ext_resource type="PackedScene" uid="uid://c73l1cm417ghn" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/wall_tsplit.glb" id="23_604n2"]
 [ext_resource type="PackedScene" uid="uid://bq4e6gwhyv4kh" path="res://Shooter-Game-Godot/brackeys_3d_game_assets/zombie/zombie.glb" id="24_jevdf"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b4fd3"]
+sky_top_color = Color(0.509804, 0.737255, 0.972549, 1)
+sky_horizon_color = Color(0.677451, 0.726564, 0.776387, 1)
+ground_horizon_color = Color(0.677451, 0.726564, 0.776387, 1)
+
+[sub_resource type="Sky" id="Sky_iytg4"]
+sky_material = SubResource("ProceduralSkyMaterial_b4fd3")
+
+[sub_resource type="Environment" id="Environment_so0sk"]
+background_mode = 2
+sky = SubResource("Sky_iytg4")
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_teeat"]
+
 [node name="Node3D" type="Node3D"]
 
-[node name="floor_stone" parent="." instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66054, 0, -0.172233)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_so0sk")
 
-[node name="floor_stone2" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
-
-[node name="floor_stone3" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="floor_stone4" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
-
-[node name="floor_stone5" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-
-[node name="floor_stone6" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8)
-
-[node name="floor_stone7" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
-
-[node name="floor_stone8" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -12)
-
-[node name="floor_stone9" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -8)
-
-[node name="floor_stone10" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
-
-[node name="floor_stone11" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -12)
-
-[node name="floor_stone19" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
-
-[node name="floor_stone20" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -12)
-
-[node name="floor_stone12" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
-
-[node name="floor_stone13" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1)
-
-[node name="floor_stone14" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
-
-[node name="floor_stone15" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5)
-
-[node name="floor_stone17" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
-
-[node name="floor_stone18" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -5)
-
-[node name="floor_stone16" parent="floor_stone" instance=ExtResource("1_gkua5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.971961, 0.148617, -0.182222, 0, 0.774944, 0.632029, 0.235142, 0.614308, -0.753216, 0, 0, 0)
+light_color = Color(0.0196078, 0.0313726, 0.0117647, 1)
+shadow_enabled = true
 
 [node name="floor_stone17" parent="." instance=ExtResource("1_gkua5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21685, 0, -16.0005)
@@ -176,9 +142,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15971, 4.12127, -13.6826)
 
 [node name="torch_mounted2" parent="." instance=ExtResource("15_mt6qq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97389, 4.0154, -13.6826)
-
-[node name="skeleton_mage" parent="." instance=ExtResource("16_3484b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55021, 0, -9.25437)
 
 [node name="floor_wood" parent="." instance=ExtResource("17_jicuo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39135, 0, -19.104)
@@ -434,3 +397,90 @@ transform = Transform3D(0.0418756, 0, -0.999123, 0, 1, 0, 0.999123, 0, 0.0418756
 
 [node name="wall_half_endcap12" parent="." instance=ExtResource("8_chbri")]
 transform = Transform3D(0.999953, 0, 0.00973886, 0, 1.00192, 0, -0.00973886, 0, 0.999953, -10.1481, -0.0477185, -42.0784)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="floor_stone" parent="CSGCombiner3D" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66054, 0, -0.172233)
+
+[node name="floor_stone2" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="floor_stone3" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="floor_stone4" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+
+[node name="floor_stone5" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="floor_stone6" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8)
+
+[node name="floor_stone7" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="floor_stone8" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -12)
+
+[node name="floor_stone9" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -8)
+
+[node name="floor_stone10" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
+
+[node name="floor_stone11" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -12)
+
+[node name="floor_stone19" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8)
+
+[node name="floor_stone20" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -12)
+
+[node name="floor_stone12" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12)
+
+[node name="floor_stone13" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1)
+
+[node name="floor_stone14" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+metadata/Material = Color(0, 0.568627, 0, 1)
+
+[node name="floor_stone15" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5)
+
+[node name="floor_stone17" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
+
+[node name="floor_stone18" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -5)
+
+[node name="floor_stone16" parent="CSGCombiner3D/floor_stone" instance=ExtResource("1_gkua5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="wall23" parent="." instance=ExtResource("2_q7ur8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321167, 4.76837e-07, -4.16419)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="skeleton_mage" parent="." instance=ExtResource("16_3484b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55021, 0, -11.2912)
+script = ExtResource("17_s6w4g")
+
+[node name="Camera3D" type="Camera3D" parent="skeleton_mage"]
+transform = Transform3D(-0.921717, -0.00738255, 0.387794, 0.0299072, 0.995489, 0.0900356, -0.386709, 0.0945852, -0.917338, 1.30486, 3.60584, -4.56238)
+
+[node name="BoneAttachment3D" parent="skeleton_mage/Rig/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0, 1.24143, 0)
+bone_idx = 14
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="skeleton_mage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55021, 0, 11.2912)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="skeleton_mage/CharacterBody3D"]
+shape = SubResource("SphereShape3D_teeat")
+
+[editable path="skeleton_mage"]

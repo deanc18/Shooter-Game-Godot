@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cs6qfbgklm7j1"
+uid="uid://ks5s1irii7t8"
 path="res://.godot/imported/wall.glb-38bd1d12fc06bfda11b647666c0c27c9.scn"
 
 [deps]
@@ -27,4 +27,11 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"DungeonMat": {
+"use_external/enabled": true,
+"use_external/path": "res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/DungeonMat.tres"
+}
+}
+}

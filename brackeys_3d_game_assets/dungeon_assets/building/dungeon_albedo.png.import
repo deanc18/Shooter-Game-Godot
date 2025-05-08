@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://diypfv45ypdlg"
-path.s3tc="res://.godot/imported/dungeon_albedo.png-c2d77d9cd7a7102d9e0e466ee09380c8.s3tc.ctex"
-path.etc2="res://.godot/imported/dungeon_albedo.png-c2d77d9cd7a7102d9e0e466ee09380c8.etc2.ctex"
+path.s3tc="res://.godot/imported/dungeon_albedo.png-833daa9e3535a9f8849cd6e22ad85380.s3tc.ctex"
+path.etc2="res://.godot/imported/dungeon_albedo.png-833daa9e3535a9f8849cd6e22ad85380.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/dungeon_albedo.png"
-dest_files=["res://.godot/imported/dungeon_albedo.png-c2d77d9cd7a7102d9e0e466ee09380c8.s3tc.ctex", "res://.godot/imported/dungeon_albedo.png-c2d77d9cd7a7102d9e0e466ee09380c8.etc2.ctex"]
+source_file="res://Shooter-Game-Godot/brackeys_3d_game_assets/dungeon_assets/building/dungeon_albedo.png"
+dest_files=["res://.godot/imported/dungeon_albedo.png-833daa9e3535a9f8849cd6e22ad85380.s3tc.ctex", "res://.godot/imported/dungeon_albedo.png-833daa9e3535a9f8849cd6e22ad85380.etc2.ctex"]
 
 [params]
 
